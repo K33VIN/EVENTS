@@ -42,13 +42,7 @@ nav {
     font-size: 24px; /* Tamaño del texto */
     margin: 0; /* Elimina el margen por defecto */
   }
-
-
-  .tituloTexto {
-    justify-content: center;
-    align-items: center;
-  }
-
+  
 /* _________________________________________________________________________ */
 
   footer {
