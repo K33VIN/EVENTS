@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styleError.css') }}">
+    <title>buscador</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@900&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+      <a href="{{ url_for('inicio') }}">Inicio</a>
+      <a href="{{ url_for('acerca_de') }}">Acerca de</a>
+      <a href="{{ url_for('contacto') }}">Contacto</a>
+    </nav>
+
+    <div class="cuadro-flotanteBuscador">
+        <div class="texto">
+            <h1 class="tituloTextoBuscador">{{ nombre_artista }}</h1>
+        </div>
+    </div>
+
+    <!-- AQUI ESTA LA RESPUESTA -->
+    <div class="cuadro-flotante1">
+        <div class="texto">
+          <p class="contenidoTexto">No hay resultados para este <br> artista en esta ciudad</p>
+        </div>
+    </div>
+
+
+    <footer>
+      <div class="footer-container">
+        <p>Todos los derechos reservados © 2023</p>
+        <p><a href="{{ url_for('politica') }}">Política de privacidad</a> | <a href="{{ url_for('politica') }}">Términos y condiciones</a></p>
+      </div>
+    </footer>
+      
+</body>
+</html>

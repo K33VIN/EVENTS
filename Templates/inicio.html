@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Link a la hoja de estilos styles.css -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+  
+  <!-- Link a la fuente Mulish y Roboto de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@900&family=Roboto&display=swap" rel="stylesheet">
+  
+  <title>EVENTS</title>
+</head>
+
+<body>
+  <!-- Video de fondo -->
+  <video src="{{ url_for('static', filename='video.mp4') }}" autoplay muted loop></video>
+
+  <div class="contenido"></div>
+
+  <!-- Barra de navegacion -->
+  <nav>
+    <a href="{{ url_for('inicio') }}">Inicio</a>
+    <a href="{{ url_for('acerca_de') }}">Acerca de</a>
+    <a href="{{ url_for('contacto') }}">Contacto</a>
+  </nav>
+  
+  <!-- Título principal -->
+  <h1 class="titulo">Events <span class="marca-registrada">®</span></h1>
+
+  <!-- Formulario de búsqueda -->
+  <div class="formulario">
+    <form action="{{ url_for('buscador') }}" method="POST">
+      <div class="form-group">
+        <label for="nombreArtista">artista</label>
+        <input type="text" id="nombreArtista" name="nombreArtista" placeholder="Escriba nombre del artista">
+      </div>
+      <div class="form-group">
+        <label for="ciudad">Ciudad </label>
+        <input type="text" id="ciudad" name="ciudad" placeholder="Escriba ciudad">
+      </div>
+      <div class="form-group">
+        <button type="submit">Buscar</button>
+      </div>
+    </form>
+  </div>  
+
+  <!-- Pie de página -->
+  <footer>
+    <div class="footer-container">
+      <p>Todos los derechos reservados &copy; 2023</p>
+      <p><a href="{{ url_for('politica') }}">Política de privacidad</a> | <a href="{{ url_for('politica') }}">Términos y condiciones</a></p>
+    </div>
+  </footer>
+</body>
+</html>

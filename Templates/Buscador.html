@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styleBuscador.css') }}">
+    <title>buscador</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@900&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <a href="{{ url_for('inicio') }}">Inicio</a>
+    <a href="{{ url_for('acerca_de') }}">Acerca de</a>
+    <a href="{{ url_for('contacto') }}">Contacto</a>
+  </nav>
+
+    <div class="cuadro-flotanteBuscador">
+        <div class="texto">
+            <h1 class="tituloTextoBuscador">{{ nombre_artista }}</h1>
+        </div>
+    </div>
+
+    <!-- AQUI ESTA LA SECCIÓN PARA MOSTRAR LOS EVENTOS -->
+    <div class="resultados-container">
+      {% for evento in evento_data %}
+      <div class="cuadro-flotanteResultados">
+          <div class="texto">
+              <h1 class="tituloTexto">{{ evento['nombre'] }}</h1>
+              <p class="ciudadPais">{{ evento['lugar'] }}</p>
+              <p class="Direccion">{{ evento['direccion'] }}</p>
+              <p class="Precio">{{ evento['precio'] }}</p>
+              <p class="Fecha">{{ evento['fecha'] }}</p>
+              <a href="{{ evento['link'] }}" class="botonComprar">Comprar entrada</a>
+          </div>
+      </div>
+      {% endfor %}
+  </div>
+  
+  
+
+
+    <footer>
+      <div class="footer-container">
+        <p>Todos los derechos reservados © 2023</p>
+        <p><a href="{{ url_for('politica') }}">Política de privacidad</a> | <a href="{{ url_for('politica') }}">Términos y condiciones</a></p>
+      </div>
+    </footer>
+      
+</body>
+</html>

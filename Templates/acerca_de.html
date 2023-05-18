@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styleAcercaDe.css') }}">
+    <title>acerca de</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@900&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+      <a href="{{ url_for('inicio') }}">Inicio</a>
+      <a href="{{ url_for('acerca_de') }}">Acerca de</a>
+      <a href="{{ url_for('contacto') }}">Contacto</a>
+    </nav>
+    
+    <div class="cuadro-flotante1">
+      <div class="texto">
+        <h1 class="tituloTexto">Que hacemos?</h1>
+        <p class="contenidoTexto">Facilitamos la búsqueda de eventos relacionados con tus artistas favoritos. Simplemente ingresa el nombre del
+           artista en nuestra barra de búsqueda o incluso solo la ciudad y descubre una lista detallada de los eventos próximos. ¡Disfruta de una 
+           experiencia sin complicaciones!
+        </p>
+      </div>
+      <div class="imagen">
+        <img src="https://w0.peakpx.com/wallpaper/671/471/HD-wallpaper-concert-crowd-music-night.jpg" alt="Imagen de ejemplo">
+      </div>
+    </div>
+
+    <div class="cuadro-flotante2">
+      <div class="texto">
+        <h1 class="tituloTexto">En resumen...</h1>
+        <p class="contenidoTexto">Hemos creado una página web que funciona como un motor de búsqueda de eventos, que permite a los usuarios encontrar
+           eventos de manera fácil y personalizada. ¡Estamos emocionados de ayudar a los amantes de los eventos a encontrar los mejores eventos en su zona!
+        </p>
+      </div>
+      <div class="imagen">
+        <img src="https://es.rollingstone.com/wp-content/uploads/2022/10/Restauran-el-material-perdido-del-show-de-Led-Zeppelin-en-el-Festival-Bath-1.jpg" alt="Imagen de ejemplo">
+      </div>
+    </div>
+    
+    <div class="cuadro-flotanteQuienes">
+      <div class="texto">
+        <h1 class="tituloTexto">Quienes somos?</h1>
+        <p class="contenidoTexto">Hola, mi nombre es kevin Herrera, y soy un alumno de desarrollo de aplicaciones web. Desde que comencé a estudiar, he estado fascinado por el mundo de la tecnología y la creación de aplicaciones que pueden facilitar la vida de las personas.
+          
+          Decidí crear una aplicación web para el seguimiento de eventos, ya que creo que hay una gran demanda de una herramienta que permita buscar eventos de manera rápida y fácil. Con mi aplicación, quiero ayudar a las personas a encontrar los mejores eventos cerca de ellos, ya sea por zona o artista, para que puedan disfrutar de experiencias únicas y divertidas.
+      </p>
+      </div>
+      <div class="imagenGato">
+        <img src="https://ih1.redbubble.net/image.4824875359.0018/flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt="Imagen de ejemplo">
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <p>Todos los derechos reservados © 2023</p>
+        <p><a href="{{ url_for('politica') }}">Política de privacidad</a> | <a href="{{ url_for('politica') }}">Términos y condiciones</a></p>
+      </div>
+    </footer>
+    
+</body>
+
+
+</html>

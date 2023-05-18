@@ -1,0 +1,286 @@
+/* fuentes */
+head {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estilos para el contenido de la página */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #ddd;
+}
+
+
+/* ESTILOS DEL VIDEO _________________________________________________________*/
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding-top: 56.25%; /* relación de aspecto de 16:9 */
+  }
+  
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+/* _________________________________________________________________________ */
+.titulo {
+    opacity: 0;
+    animation: aparecer 3s forwards;
+    animation-delay: 1s;
+  }
+  
+  @keyframes aparecer {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+/* _________________________________________________________________________ */
+
+/* barra menu superior */
+nav {
+  background-color: black;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+  nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  nav a:hover {
+    background-color: #fc3c44;
+  }
+/* _________________________________________________________________________ */
+
+  h1 {
+    font-size: 170px; 
+    text-align: center; 
+    margin-top: 100px;
+  }
+
+  h1 .marca-registrada {
+    font-size: 30px; /* Redimensiona el tamaño de la marca registrada */
+}
+  
+/* _________________________________________________________________________ */
+/* ESTILOS FORMULARIO HORIZONTAL
+.formulario {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  label {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 25px;
+    margin-right: 15px;
+  }
+  
+  input {
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    opacity: 0.5;
+    flex-grow: 1;
+    margin-right: 20px;
+  }
+  
+  button {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #fc3c44;
+    color: white;
+    cursor: pointer;
+  }
+  
+   */
+
+   /* _________________________________________________________________________ */
+   /* FORMULARIO HORIZONTAL MAS CENTRADO */
+   /* .formulario-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+  }
+  
+  .formulario {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  form {
+    display: inline-block;
+  }
+  
+  label {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 25px;
+  }
+  
+  .input-nombreArtista {
+    margin-bottom: 20px;
+  }
+  
+  .input-ciudad {
+    margin-top: 20px;
+  }
+  
+  input {
+    display: inline-block;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    opacity: 0.5;
+  }
+  
+  button {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #fc3c44;
+    color: white;
+    cursor: pointer;
+  } */
+
+  .formulario {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  label {
+    font-size: 25px;
+    margin-right: 10px;
+    color: white;
+  }
+  
+  input[type="text"] {
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    opacity: 0.5;
+    width: 200px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  input[type="text"]:focus, input[type="text"]:hover {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  
+/* _________________________________________________________________________ */
+
+  button {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #fc3c44;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    /* otros estilos */
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+  }
+
+/* _________________________________________________________________________ */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    font-size: 14px;
+    padding: 20px 0;
+    color: #fc3c44;
+    backdrop-filter: blur(10px);
+  }
+  
+  .footer-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .footer-container p {
+    margin: 10px 0;
+  }
+  
+  .footer-container a {
+    color: #fc3c44;
+    text-decoration: none;
+  }
+
+  
