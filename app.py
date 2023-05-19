@@ -42,7 +42,7 @@ def buscador():
         url += f'&countryCode={country}'
 
     try:
-        response = requests.get(url)
+        response = requests.get(url) #utiliza la biblioteca request
         response.raise_for_status()
     except requests.exceptions.RequestException as e:
         print(f'Solicitud fallida con excepción: {e}')
@@ -54,14 +54,15 @@ def buscador():
         return redirect(url_for('not_found_error', error=f'No se encontraron eventos para {name} en {city or country}'))
 
     events = data['_embedded']['events']
-    evento_data = []
+    evento_data = [] # crea una lista vacia
 
-    for event in events:
-        evento_dict = {}
-        evento_dict['nombre'] = event['name']
+    for event in events: # itera sobre cada elemento sobre la lista de eventos
+        evento_dict = {} #sobre cada evento crea un diccionario vacio 
+        evento_dict['nombre'] = event['name'] # asigna el valor del nombre del evento a la clave 'nombre'
         
-        if '_embedded' in event and 'venues' in event['_embedded']:
-            venue = event['_embedded']['venues'][0]
+        #nos aseguramos de que tenemos en embedeed info sobre los lugares de eventos
+        if '_embedded' in event and 'venues' in event['_embedded']: # verifica si embedded tiene la clave venues
+            venue = event['_embedded']['venues'][0]  # solo se está interesado en el primer lugar asociado al evento.
             if 'city' in venue and 'country' in venue:
                 evento_dict['lugar'] = f"{venue['city']['name']}, {venue['country']['name']}"
             elif 'city' in venue:
@@ -112,48 +113,10 @@ try:
 except requests.exceptions.RequestException as e:
     print(f'Error en la solicitud a la API de Ticketmaster: {e}')
 
-# me permite ver la estructura JSON
-#  print(json.dumps(response.json(), indent=4))
 
-# import pandas as pd
-# data = {
-#     "_embedded": {
-#         "events": 
-#             [
-#             {"name": "event": "locale"}
-#             ]
-#                 }
-#         }
-# # Acceder a la clave "name" dentro de "_embedded/events"
-# name = data["_embedded"]["events"][0]["name"]
-
-# print(name)
-
-
-import pandas as pd
-
-# Suponiendo que 'data' es tu JSON recibido
-name = data['_embedded']['events'][0]['name']
-locale = data['_embedded']['events'][0]['locale']
-
-print(name)
-print(locale)
-
-
-
-import json
-
-# Suponiendo que 'data' es tu JSON recibido
+# Printar el json para ver su estructura
 print(json.dumps(data, indent=4))
-
-
-
-# # Utilizar pandas para normalizar el JSON
-# a = pd.json_normalize(data, record_path=['_embedded', 'events', 'name'])
-# print(a)
-
 
 
 if __name__ == '__main__':
     app.run()
-
